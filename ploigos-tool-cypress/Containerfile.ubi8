@@ -126,6 +126,7 @@ ENV _MITSHM=0
 
 # point Cypress at the /root/cache no matter what user account is used
 # see https://on.cypress.io/caching
+
 ENV CYPRESS_CACHE_FOLDER=/root/.cache/Cypress
 RUN npm install -g "cypress@7.7.0"
 RUN cypress verify
@@ -172,4 +173,4 @@ RUN echo  " node version:    $(node -v) \n" \
 # # may not actually be able to run as this user at runtime
 # # but platforms like OpenShift will still respect users home directory
 # # so still worth setting
-USER ${PLOIGOS_USER_UID}
+# USER ${PLOIGOS_USER_UID}
