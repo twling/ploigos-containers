@@ -1664,10 +1664,11 @@ jobs:
 
       - name: Test Image 🧪
         run: |
-          echo "Running: docker run --entrypoint=which ${{ env.IMAGE_TAG_LOCAL }} node npm google-chrome"
+          echo "Running: docker run --entrypoint=which ${{ env.IMAGE_TAG_LOCAL }} node npm google-chrome cypress"
           docker run --entrypoint=which ${{ env.IMAGE_TAG_LOCAL }} npm --help
           docker run --entrypoint=which ${{ env.IMAGE_TAG_LOCAL }} node --help
           docker run --entrypoint=which ${{ env.IMAGE_TAG_LOCAL }} google-chrome --help
+          docker run --entrypoint=which ${{ env.IMAGE_TAG_LOCAL }} cypress --help
 
       - name: Login to External Registry 🔑
         uses: docker/login-action@v1
